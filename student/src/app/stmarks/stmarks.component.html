@@ -1,0 +1,83 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="card">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <label>Exam ID </label>
+                    <input type="text" class="form-control" placeholder="Enter the exam ID" id="examid" [(ngModel)]="examid" [ngModelOptions]="{standalone: true}">
+                    <label>Exam Name </label>
+                    <input type="text" class="form-control" placeholder="Enter the exam name" id="examname" [(ngModel)]="examname" [ngModelOptions]="{standalone: true}">
+                    <label>student ID </label>
+                    <input type="text" class="form-control" placeholder="Enter the student ID" id="studentid" [(ngModel)]="studentid" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub1" [(ngModel)]="sub1" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub2" [(ngModel)]="sub2" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub3" [(ngModel)]="sub3" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub4" [(ngModel)]="sub4" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub5" [(ngModel)]="sub5" [ngModelOptions]="{standalone: true}">
+                    <label>Subject marks </label>
+                    <input type="text" class="form-control" placeholder="Enter the Subject Marks" id="sub6" [(ngModel)]="sub6" [ngModelOptions]="{standalone: true}">
+                    <label>Total Marks</label>
+                    <input type="text" class="form-control" placeholder="" id="total" [(ngModel)]="total" [ngModelOptions]="{standalone: true}">
+                    <label>Grade </label>
+                    <input type="text" class="form-control" placeholder="" id="grade" [(ngModel)]="grade" [ngModelOptions]="{standalone: true}">
+                    <label>Result</label>
+                    <input type="text" class="form-control" placeholder="" id="Result" [(ngModel)]="Result" [ngModelOptions]="{standalone: true}">
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success" (click)="save()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-4" >
+<table class="table">
+    <thead>  
+    <tr>
+        <th scope="col">Sl. Number</th>
+        <th scope="col">Exam ID</th>
+        <th scope="col">Exam Name</th>
+        <th scope="col">Student ID</th>  
+        <th scope="col">Subject 1</th>  
+        <th scope="col">Subject 2</th> 
+        <th scope="col">Subject 3</th> 
+        <th scope="col">Subject 4</th> 
+        <th scope="col">Subject 5</th> 
+        <th scope="col">Subject 6</th> 
+        <th scope="col">Total</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Result</th>   
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let StudentItem of MarksArray">
+        <td>{{StudentItem.id}}</td>
+        <td>{{StudentItem.examid}}</td>
+        <td>{{StudentItem.examname}}</td>
+        <td>{{StudentItem.studentid}}</td>
+        <td>{{StudentItem.sub1}}</td>
+        <td>{{StudentItem.sub2}}</td>
+        <td>{{StudentItem.sub3}}</td>
+        <td>{{StudentItem.sub4}}</td>
+        <td>{{StudentItem.sub5}}</td>
+        <td>{{StudentItem.sub6}}</td>
+        <td>{{StudentItem.total}}</td>
+        <td>{{StudentItem.grade}}</td>
+        <td>{{StudentItem.Result}}</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>            
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+</div>
+
+
